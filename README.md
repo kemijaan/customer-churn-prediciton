@@ -1,6 +1,6 @@
 # Customer Churn Prediction
 
-A machine learning project that explores customer churn patterns and builds classification models to identify customers who are likely to leave a telecommunications company.
+This machine learning project that explores customer churn patterns and builds classification models to identify customers who are likely to leave a telecommunications company.
 
 The project uses the IBM Telco Customer Churn dataset to investigate customer behaviour, compare different machine learning algorithms, and evaluate how churn predictions can support business retention strategies.
 
@@ -8,19 +8,19 @@ The project uses the IBM Telco Customer Churn dataset to investigate customer be
 
 1. **Limited Churn Visibility**
 
-   Telecommunications companies may lack sufficient insight into how many customers are at risk of leaving their services.
+   Telecommunications companies lack sufficient insight of how many customers are at risk of leaving their services.
 
-2. **Revenue and Business Impact**
+3. **Revenue and Business Impact**
 
-   Customer churn can result in revenue losses, increased customer acquisition costs, and negative impacts on business growth.
+   Customer churn will result in revenue losses, higher customer acquisition costs (CAC), and negative impacts on business growth.
 
-3. **Lack of Early Risk Identification**
+5. **Lack of Early Risk Identification**
 
-   Without identifying customers who are likely to churn, companies may struggle to prepare and implement retention strategies before customers leave.
+   Without having a proper insight, companies will struggle to prepare and implement retention strategies before customers leave.
 
 ## Dataset
 
-This project uses the **IBM Telco Customer Churn dataset**, which contains customer information from a telecommunications company.
+This project uses the **IBM Telco Customer Churn dataset** containing customer information from a telecommunications company.
 
 ### Dataset Overview
 
@@ -47,3 +47,26 @@ The dataset includes customer demographics, subscribed services, account informa
 - **Uploader:** Blastchar
 
 The dataset is used for educational and machine learning experimentation.
+
+## Data Cleaning & Exploratory Data Analysis
+
+### Data Cleaning
+
+The following preprocessing steps were performed:
+
+- Checked for duplicate records.
+- Identified 11 missing values in `TotalCharges`.
+- Converted `TotalCharges` from string to numeric format.
+- Replaced the missing `TotalCharges` values with 0, as all affected customers had a tenure of 0 months.
+- Excluded `customerID` from the machine learning features because it serves as an identifier rather than a meaningful predictive feature.
+
+### Exploratory Data Analysis
+
+Investigated relationships between customer churn and several features:
+
+- **Contract:** Month-to-month customers had a churn rate of 42.7%, compared to 11.3% for one-year contracts and 2.8% for two-year contracts.
+- **Tenure:** Churned customers had a median tenure of 10 months, compared to 38 months for customers who stayed.
+- **Internet Service:** Fiber optic customers had a churn rate of 41.89%, higher than DSL customers (18.96%).
+- **Monthly Charges:** Churned customers had higher average monthly charges ($74.44) than customers who stayed ($61.27).
+
+From the analysis, contract type, customer tenure and internet service appear to have noticeable relationships with customer churn.
