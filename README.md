@@ -39,3 +39,11 @@ This project uses the **IBM Telco Customer Churn dataset**, which contains custo
 The target variable indicates whether a customer has left the telecommunications company.
 
 The dataset includes customer demographics, subscribed services, account information, contract types, payment methods, and billing details.
+
+### Dataset Source
+
+- **Platform:** Kaggle
+- **Dataset:** [Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+- **Uploader:** Blastchar
+
+The dataset is used for educational and machine learning experimentation.
