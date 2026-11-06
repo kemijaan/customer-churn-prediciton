@@ -105,3 +105,53 @@ After selecting Logistic Regression as the preferred model, its classification t
 A threshold of **0.55** was selected because it provided approximately 74% precision while maintaining at least 40% recall.
 
 The final model was then evaluated on the held-out test set.
+
+## Model Evaluation & Results
+
+### Model Comparison
+
+The three models were evaluated using validation data to determine which performed best.
+
+| Model | Accuracy | Precision | Recall | F1-score |
+|---|---:|---:|---:|---:|
+| Logistic Regression | 81.72% | 71.63% | 51.51% | 59.92% |
+| Decision Tree | 79.33% | 66.02% | 45.48% | 53.86% |
+| Random Forest | 80.75% | 68.98% | 49.83% | 57.86% |
+
+Logistic Regression achieved the highest scores across all four evaluation metrics. It was selected as the preferred model for further evaluation.
+
+### Threshold Selection
+
+A classification threshold of **0.55** was selected using validation data.
+
+This threshold achieved approximately 74% precision while maintaining at least 40% recall, matching the project's objective of prioritising precision without allowing recall to drop too low.
+
+### Final Test Results
+
+The final Logistic Regression model was evaluated on the test set using the selected threshold.
+
+| Metric | Result |
+|---|---:|
+| Accuracy | 79.77% |
+| Precision | 69% |
+| Recall | 44% |
+| F1-score | 54% |
+
+The model correctly identified 69% of the customers it predicted would churn. However, it only identified 44% of all actual churners.
+
+### Confusion Matrix
+
+| | Predicted: No Churn | Predicted: Churn |
+|---|---:|---:|
+| Actual: No Churn | 960 | 75 |
+| Actual: Churn | 210 | 164 |
+
+The model produced 164 true positives and 210 false negatives. This means a significant number of customers who eventually churned were not identified by the model.
+
+### Conclusion
+
+Although Logistic Regression performed better than the other tested models, I consider its 44% recall insufficient for practical deployment.
+
+For this project, I would prefer to achieve at least 50% recall while maintaining reasonable precision.
+
+The model is therefore treated as a prototype rather than a production-ready solution. Further improvements, testing with more suitable historical data, and evaluation in a real retention campaign would be necessary before deployment.
