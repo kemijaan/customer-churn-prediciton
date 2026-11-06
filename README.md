@@ -70,3 +70,38 @@ Investigated relationships between customer churn and several features:
 - **Monthly Charges:** Churned customers had higher average monthly charges ($74.44) than customers who stayed ($61.27).
 
 From the analysis, contract type, customer tenure and internet service appear to have noticeable relationships with customer churn.
+
+## Machine Learning Methodology
+
+### Model Selection
+
+Three classification algorithms were tested to compare their performance in predicting customer churn:
+
+- **Logistic Regression**
+- **Decision Tree**
+- **Random Forest**
+
+Rather than assuming one algorithm would perform best, all three were evaluated to identify which performed better for the project's objective.
+
+### Data Preprocessing
+
+Before training, a preprocessing pipeline was created using:
+
+- **StandardScaler:** Standardised numerical features to ensure they were on a comparable scale.
+- **OneHotEncoder:** Converted categorical features into numerical representations without introducing an artificial hierarchy.
+
+A `ColumnTransformer` and `Pipeline` were used to organise preprocessing and model training while preventing preprocessing leakage between training and testing data.
+
+### Hyperparameter Tuning
+
+`GridSearchCV` was used to test different hyperparameter combinations through 5-fold cross-validation.
+
+Different scoring metrics were explored, including precision and recall, depending on the optimisation objective.
+
+### Threshold Tuning
+
+After selecting Logistic Regression as the preferred model, its classification threshold was adjusted using validation data.
+
+A threshold of **0.55** was selected because it provided approximately 74% precision while maintaining at least 40% recall.
+
+The final model was then evaluated on the held-out test set.
