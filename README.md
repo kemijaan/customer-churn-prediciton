@@ -18,3 +18,24 @@ The project uses the IBM Telco Customer Churn dataset to investigate customer be
 
    Without identifying customers who are likely to churn, companies may struggle to prepare and implement retention strategies before customers leave.
 
+## Dataset
+
+This project uses the **IBM Telco Customer Churn dataset**, which contains customer information from a telecommunications company.
+
+### Dataset Overview
+
+- **Total records:** 7,043 customers
+- **Total columns:** 21
+- **Target variable:** `Churn`
+- **Classification type:** Binary classification
+
+### Target Distribution
+
+| Churn Status | Customers |
+|---|---:|
+| No | 5,174 |
+| Yes | 1,869 |
+
+The target variable indicates whether a customer has left the telecommunications company.
+
+The dataset includes customer demographics, subscribed services, account information, contract types, payment methods, and billing details.
